@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 // import { fetchCount } from './counter/counterAPI';
 
 export const appSlice = createSlice({
@@ -16,6 +16,6 @@ export const appSlice = createSlice({
 
 export const { enterRoom } = appSlice.actions;
 
-export const selectRoomId = (state) => state.roomId;
+export const selectRoomId = (state) => state.counter.roomId;
 
 export default appSlice.reducer;

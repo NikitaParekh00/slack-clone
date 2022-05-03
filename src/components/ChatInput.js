@@ -5,7 +5,7 @@ import { db } from "../firebase";
 
 import firebase from "firebase/compat/app";
 
-function ChatInput({ channelName, channelId }) {
+function ChatInput({ channelName, channelId, chatRef }) {
   const [input, setInput] = useState("");
   console.log(channelId);
   const sendMessage = (e) => {
@@ -24,6 +24,9 @@ function ChatInput({ channelName, channelId }) {
         "https://media-exp1.licdn.com/dms/image/C5603AQEC07vsLsI1bA/profile-displayphoto-shrink_200_200/0/1646909593387?e=1652918400&v=beta&t=zij8UwqHmq67BMleazrixzsKJ7Y-vQnI5uA0cKq19U0",
     });
 
+    chatRef.current.scrollIntoView({
+      behavior: "smooth",
+    });
     setInput("");
   };
 

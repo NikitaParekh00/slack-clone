@@ -19,16 +19,16 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 function Sidebar() {
   const [channels] = useCollection(db.collection("rooms"));
-const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   return (
     <SidebarContainer>
       <SidebarHeader>
         <SidebarInfo>
-          <h2>NALA</h2>
+          {/* <h2>Ia Nikita</h2> */}
           <h3>
             <FiberManualRecordIcon />
-            Nikita Parekh
+            {user.displayName}
           </h3>
         </SidebarInfo>
         <CreateIcon />
@@ -95,7 +95,7 @@ const SidebarInfo = styled.div`
 
   > h3 {
     display: flex;
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 400;
     align-items: center;
   }

@@ -12,6 +12,7 @@ import Spinner from "react-spinkit";
 
 function App() {
   const[user,loading] = useAuthState(auth);
+console.log(user);
 
 if(loading){
   return (
